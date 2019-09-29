@@ -32,7 +32,7 @@ class BurgerBuilder extends Component {
     removeIngredientHandler = (type) => {
         // update state safety
         const newIngredient = { ...this.state.ingredients };
-        let newPrice = this.totalPrice;
+        let newPrice = this.state.totalPrice;
         if (newIngredient[type] > 0) {
             newIngredient[type]--;
             newPrice -= PRICING[type];
@@ -56,7 +56,7 @@ class BurgerBuilder extends Component {
                         removeIngredientHandler: this.removeIngredientHandler,
                         disabledInfo
                     }}>
-                    <BuildControls /> 
+                    <BuildControls prices={this.state.totalPrice}/> 
                 </BurgerBuilderContext.Provider>
             </Aux>
         )

@@ -3,7 +3,7 @@ import { createContext } from 'react';
 const initValues = {
     addIngredientHandler: () => {},
     removeIngredientHandler: () => {},
-    disabledInfo: {}
+    disabledInfo: {},
 }
 
 const BurgerBuilderContext = createContext(initValues);

@@ -9,6 +9,9 @@ const build = () => {
 
 const BuildControls  = (props) => (
     <div className={classes.BuildControls}>
+        <div>
+            <strong>Total Prices: {'$' + props.prices.toFixed(2)}</strong>
+        </div>
         {build()}
     </div>
 );
