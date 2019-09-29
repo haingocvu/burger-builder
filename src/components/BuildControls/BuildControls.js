@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classes from './BuildControls.module.scss';
+import BuildControl from './BuildControl/BuildControl';
+import { INGREDIENTS } from '../../constants/constants';
 
-const BuildControl  = (props) => (
-    <div className={classes.BuildControls}></div>
+const build = () => {
+    return INGREDIENTS.map(c => <BuildControl type={c.type} key={c.label} label={c.label} />)
+}
+
+const BuildControls  = (props) => (
+    <div className={classes.BuildControls}>
+        {build()}
+    </div>
 );
 
-export default BuildControl;
+export default memo(BuildControls);
