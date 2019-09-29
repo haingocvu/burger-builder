@@ -1,0 +1,20 @@
+@import './configurations.scss';
+
+// place to define mixin
+@mixin desktop { 
+    @media (min-width: #{$desktop-width}) and (min-height: #{$desktop-height}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (min-height: #{$tablet-height}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: #{$mobile-width}) and (min-height: #{$mobile-height}) {
+        @content;
+    }
+}
