@@ -4,6 +4,7 @@ const initValues = {
     addIngredientHandler: () => {},
     removeIngredientHandler: () => {},
     disabledInfo: {},
+    purchasable: false
 }
 
 const BurgerBuilderContext = createContext(initValues);

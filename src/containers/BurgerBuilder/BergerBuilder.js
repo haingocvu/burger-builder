@@ -43,8 +43,18 @@ class BurgerBuilder extends Component {
         })
     }
 
+    checkPurchasable = () => {
+        let sum = 0;
+        const { ingredients } = this.state;
+        for (let key in ingredients) {
+            sum += ingredients[key]
+        }
+        return sum > 0
+    }
+
     render() {
         const disabledInfo = { ...this.state.ingredients };
+        const purchasable = this.checkPurchasable()
         for (let igkey in disabledInfo)
             disabledInfo[igkey] = disabledInfo[igkey] <= 0;
         return (
@@ -54,7 +64,8 @@ class BurgerBuilder extends Component {
                     value={{
                         addIngredientHandler: this.addIngredientHandler,
                         removeIngredientHandler: this.removeIngredientHandler,
-                        disabledInfo
+                        disabledInfo,
+                        purchasable
                     }}>
                     <BuildControls prices={this.state.totalPrice}/> 
                 </BurgerBuilderContext.Provider>
