@@ -26,7 +26,7 @@ const Burger = (props) => {
     )
 }
 
-Burger.prototype = {
+Burger.propTypes = {
     ingredients: Proptypes.object
 }
 

@@ -4,6 +4,8 @@ const initValues = {
     addIngredientHandler: () => {},
     removeIngredientHandler: () => {},
     purchasingHandler: () => {},
+    continueCheckoutHandler: () => {},
+    cancelCheckoutHandler: () => {},
     disabledInfo: {},
     purchasable: false
 }

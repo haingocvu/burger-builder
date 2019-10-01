@@ -23,7 +23,7 @@ const BuildControl = (props) => {
     )
 }
 
-BuildControl.prototype = {
+BuildControl.propTypes = {
     type: PropTypes.string,
     label: PropTypes.string
 }
