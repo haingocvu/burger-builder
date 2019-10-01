@@ -4,6 +4,8 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/BuildControls/BuildControls';
 import { PRICING } from '../../constants/constants';
 import BurgerBuilderContext from '../../context/BurgerBuilder/BurgerBuiderContext';
+import Modal from '../../components/UI/Modal/Modal';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 
 class BurgerBuilder extends Component {
     state = {
@@ -13,8 +15,10 @@ class BurgerBuilder extends Component {
             salad: 0,
             bacon: 0 
         },
-        totalPrice: 0
+        totalPrice: 0,
+        purchasing: false
     }
+
     addIngredientHandler = (type) => {
         // update state safety
         const newIngredient = { ...this.state.ingredients };
@@ -52,6 +56,12 @@ class BurgerBuilder extends Component {
         return sum > 0
     }
 
+    purchasingHandler = () => {
+        this.setState({
+            purchasing: true
+        })
+    }
+
     render() {
         const disabledInfo = { ...this.state.ingredients };
         const purchasable = this.checkPurchasable()
@@ -59,11 +69,15 @@ class BurgerBuilder extends Component {
             disabledInfo[igkey] = disabledInfo[igkey] <= 0;
         return (
             <Aux>
+                <Modal show={this.state.purchasing}>
+                    <OrderSummary ingredients={this.state.ingredients} />
+                </Modal>
                 <Burger ingredients={this.state.ingredients}/>
                 <BurgerBuilderContext.Provider
                     value={{
                         addIngredientHandler: this.addIngredientHandler,
                         removeIngredientHandler: this.removeIngredientHandler,
+                        purchasingHandler: this.purchasingHandler,
                         disabledInfo,
                         purchasable
                     }}>

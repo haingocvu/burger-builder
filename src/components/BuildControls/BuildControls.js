@@ -16,7 +16,7 @@ const BuildControls  = (props) => {
                 <strong>Total Prices: {'$' + props.prices.toFixed(2)}</strong>
             </div>
             {build()}
-            <button disabled={!contex.purchasable} className={classes.OrderButton}>Order Now</button>
+            <button onClick={contex.purchasingHandler} disabled={!contex.purchasable} className={classes.OrderButton}>Order Now</button>
         </div>
     )
 };
