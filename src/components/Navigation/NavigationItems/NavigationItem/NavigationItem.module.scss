@@ -1,19 +1,43 @@
+@import "../../../../styles/mixin.scss";
+
 .NavigationItem {
-    margin: 0;
+  margin: 10px 0;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  & a {
+    color: #6f5c2c;
+    text-decoration: none;
+    width: 100%;
     box-sizing: border-box;
+    display: block;
+    &.active,
+    &:active,
+    &:hover {
+      color: #40a4c8;
+    }
+  }
+}
+
+@include tablet {
+  .NavigationItem {
+    margin: 0;
     display: flex;
     height: 100%;
+    width: auto;
     align-items: center;
     & a {
+      color: white;
+      height: 100%;
+      padding: 16px 10px;
+      border-bottom: 4px solid transparent;
+      &.active,
+      &:active,
+      &:hover {
+        background-color: #8f5c2c;
+        border-bottom: 4px solid #40a4c8;
         color: white;
-        text-decoration: none;
-        height: 100%;
-        padding: 16px 10px;
-        border-bottom: 4px solid transparent;
-        &:active {
-            background-color: #8f5c2c;
-            border-bottom: 4px solid #40a4c8;
-            color: white;
-        }
+      }
     }
+  }
 }

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classes from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 
 const Modal = (props) => {
+
     return (
         <Aux>
-            <Backdrop onDestroyModal={props.onDestroyModal} show={props.show} />
+            <Backdrop clicked={props.onDestroyModal} show={props.show} />
             <div
                 style={{
                     transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
@@ -19,4 +20,4 @@ const Modal = (props) => {
     )
 }
 
-export default Modal;
+export default memo(Modal);

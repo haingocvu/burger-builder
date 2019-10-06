@@ -1,9 +1,26 @@
-// place to define variable
-$desktop-width: 1000px;
-$desktop-height: 700px;
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+$width-1281: 1281px;
 
-$tablet-width: 500px;
-$tablet-height: 401px;
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+$width-1280: 1280px;
+$width-1025: 1025px;
 
-$mobile-width: 500px;
-$mobile-height: 400px;
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+$width-1024: 1024px;
+$width-768: 768px;
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+$width-480: 480px;
+$width-320: 320px;

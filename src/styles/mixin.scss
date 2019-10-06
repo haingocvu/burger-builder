@@ -2,19 +2,19 @@
 
 // place to define mixin
 @mixin desktop { 
-    @media (min-width: #{$desktop-width}) and (min-height: #{$desktop-height}) {
+    @media (min-width: #{$width-1025}) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (min-width: #{$tablet-width}) and (min-height: #{$tablet-height}) {
+    @media (min-width: #{$width-768}) and (max-width: #{$width-1024}) {
         @content;
     }
 }
 
 @mixin mobile {
-    @media (min-width: #{$mobile-width}) and (min-height: #{$mobile-height}) {
+    @media (min-width: #{$width-320}) and (max-width: #{$width-480}) {
         @content;
     }
 }

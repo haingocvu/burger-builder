@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import Aux from '../../../hoc/Aux';
+import React, { useContext, memo } from 'react';
+import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 import BurgerBuilderContext from '../../../context/BurgerBuilder/BurgerBuiderContext';
 
@@ -29,4 +29,4 @@ const OrderSummary = (props) => {
     )
 }
 
-export default OrderSummary;
+export default memo(OrderSummary);
